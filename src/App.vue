@@ -1,19 +1,21 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <b-button>Button</b-button>
-  <b-button variant="danger">Button</b-button>
-  <b-button variant="success">Button</b-button>
-  <b-button variant="outline-primary">Button</b-button>
   </div>
 </template>
 
 <script>
-
+import { mapActions } from 'vuex';
 
 export default {
   name: 'App',
-
+  components: {},
+  mounted() {
+    this.fetchMovies();
+  },
+  methods: {
+    ...mapActions("movieStore", ["fetchMovies"])
+  }
 }
 </script>
 
