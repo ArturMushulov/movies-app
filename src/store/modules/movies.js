@@ -22,6 +22,9 @@ const movieStore = {
         movies: {}
     },
     getters: {
+        moviesList: ({
+            movies
+        }) => movies,
         sliceIds: ({
             top250IDs
         }) => (from, to) => top250IDs.slice(from, to),
@@ -38,6 +41,14 @@ const movieStore = {
         }
     },
     actions: {
+        initMoviesStore: {
+            handler({
+                dispatch
+            }) {
+                dispatch("fetchMovies");
+            },
+            root: true
+        },
         async fetchMovies({
             getters,
             commit
