@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import movieStore from './modules/movies'
+import loaderStore from './modules/loader'
+import notificationStore from './modules/notification'
 
 Vue.use(Vuex)
 
@@ -11,10 +13,10 @@ const store = new Vuex.Store({
   mutations: {},
   actions: {},
   modules: {
-    movieStore
+    movieStore,
+    loaderStore,
+    notificationStore
   }
 })
-
-store.dispatch("initMoviesStore");
 
 export default store;
